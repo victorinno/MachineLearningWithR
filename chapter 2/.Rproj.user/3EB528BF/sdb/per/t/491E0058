@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1410982792303.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "491E0058",
+    "lastKnownWriteTime" : 8241980170700156521,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "wbcd",
+        "contentUrl" : "content?title=wbcd&file=03758c987444456b950be935cd37b351.htm",
+        "displayedObservations" : 150,
+        "displayedVariables" : 5,
+        "totalObservations" : 150,
+        "variables" : 5
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

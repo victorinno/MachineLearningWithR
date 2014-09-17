@@ -1,0 +1,17 @@
+{
+    "contents" : "library(class)\nlibrary(gmodels)\n\nwbcd <- read.csv(\"wisc_bc_data.csv\", stringsAsFactors = FALSE)\nwbcd <- wbcd[-1]\ntable(wbcd$diagnosis)\n\nwbcd$diagnosis <- factor(wbcd$diagnosis, levels=c(\"B\",\"M\"), labels = c(\"Bening\", \"Malignant\"))\n\nround(prop.table(table(wbcd$diagnosis)) * 100, digits = 1)\n\nsummary(wbcd[c(\"radius_mean\",\"area_mean\",\"smoothness_mean\")])\n\nnormalize <- function(x){\n  (x - min(x)) / (max(x) - min(x))   \n}\n\nnormalize(c(1,2,3,4,5))\nnormalize(c(10,20,30,40,50))\n\nwbcd_n <- as.data.frame(lapply(wbcd[2:31],normalize))\n\nsummary(wbcd_n$area_mean)\n\nwbcd_train <- wbcd_n[1:469,]\nwbcd_test <- wbcd_n[470:569,]\n\nwbcd_train_labels <- wbcd[1:469,1]\nwbcd_test_labels <- wbcd[470:569,1]\n\nwbcd_test_pred <- knn(train = wbcd_train, test = wbcd_test, cl = wbcd_train_labels, k = 21)\nCrossTable(x = wbcd_test_labels, y = wbcd_test_pred, prop.chisq = FALSE)",
+    "created" : 1410982851531.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1042098018",
+    "id" : "EC8B2B04",
+    "lastKnownWriteTime" : 1410984502,
+    "path" : "~/Machine Learning With R/MachineLearningWithR/chapter 3/teste.R",
+    "project_path" : "teste.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}
